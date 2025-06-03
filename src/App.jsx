@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
-import MatchInput from './pages/MatchInput.jsx';
+import MatchInput from './pages/MatchInput';
 import Leaderboard from './pages/Leaderboard.jsx';
 import Layout from './components/Layout.jsx';
 
