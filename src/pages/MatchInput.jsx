@@ -1,4 +1,3 @@
-import MatchInput from './pages/MatchInput'; // Import ergänzen
-
+import MatchInput from './pages/MatchInput';
 // Im <Routes> Block:
 <Route path="/input" element={<MatchInput />} />
