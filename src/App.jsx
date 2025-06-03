@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './pages/Home.jsx';
 import MatchInput from './pages/MatchInput.jsx';
-import Leaderboard from './pages/Leaderboard';
-import Layout from './components/Layout';
+import Leaderboard from './pages/Leaderboard.jsx';
+import Layout from './components/Layout.jsx';
 
 export default function App() {
   return (
