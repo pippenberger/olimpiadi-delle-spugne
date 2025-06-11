@@ -1,21 +1,10 @@
 import fetch from 'cross-fetch';
 globalThis.fetch = fetch;
-import dotenv from 'dotenv';
-import { createClient } from '@supabase/supabase-js';
+import 'dotenv/config';
+import { supabase } from '../src/supabaseClient.js';
 import lodash from 'lodash';
-
-dotenv.config();
 const { shuffle } = lodash;
 
-const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
-const SUPABASE_KEY = process.env.REACT_APP_SUPABASE_KEY;
-
-if (!SUPABASE_URL || !SUPABASE_KEY) {
-  console.error('❌ Supabase-Umgebungsvariablen fehlen. Bitte prüfe deine .env-Datei.');
-  process.exit(1);
-}
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // Liste der Teilnehmer:innen
 const PARTICIPANTS = [
