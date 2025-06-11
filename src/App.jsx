@@ -4,7 +4,7 @@ import Home from './pages/Home.jsx';
 import MatchInput from './pages/MatchInput.jsx';
 import Leaderboard from './pages/Leaderboard.jsx';
 import Layout from './components/Layout.jsx';
-import PlayerMatches from './pages/Home.jsx'; // Wird per :name aufgerufen
+import PlayerMatches from './pages/PlayerMatches.jsx'; // Wird per :name aufgerufen
 import Rules from './pages/Rules.jsx';
 
 export default function App() {
