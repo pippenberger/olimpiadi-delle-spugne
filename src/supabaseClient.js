@@ -1,7 +1,19 @@
 // src/supabaseClient.js
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = 'https://ckgpwsgsjmtdoipnerch.supabase.com';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNrZ3B3c2dzam10ZG9pcG5lcmNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg1NTc1OTksImV4cCI6MjA2NDEzMzU5OX0.Dbt6OnjcPSw8Xuw3AwVa8683PcfsKkSyhZgTvxTP8Dk';
+// Prefer REACT_APP_* for CRA, fall back to VITE_*, and support import.meta.env
+const supabaseUrl =
+  process.env.REACT_APP_SUPABASE_URL ||
+  process.env.VITE_SUPABASE_URL ||
+  (typeof import.meta !== 'undefined' ? import.meta.env.VITE_SUPABASE_URL : undefined);
+
+const supabaseAnonKey =
+  process.env.REACT_APP_SUPABASE_KEY ||
+  process.env.VITE_SUPABASE_ANON_KEY ||
+  (typeof import.meta !== 'undefined' ? import.meta.env.VITE_SUPABASE_ANON_KEY : undefined);
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Supabase environment variables are missing');
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
